@@ -12,3 +12,4 @@ Technologies:
 5. Play the game.
 
 ⓘ If you lose the game, you have to rerun the program in order to play again.
+Inspired by: https://www.youtube.com/watch?v=bI6e6qjJ8JQ
