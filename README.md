@@ -5,7 +5,7 @@ Technologies:
 -the Snake Game is build entirely in Java language;
 
 # Install and Run the Project:
-1. Copy the http clone request (https://github.com/mhingan/SnakeGame.git);
+1. Copy the http clone link (https://github.com/mhingan/SnakeGame.git);
 2. Open your terminal and type: git clone https://github.com/mhingan/SnakeGame.git;
 3. Open your project in IDE;
 4. Run the "SnakeGame.java" file as a Java program;
