@@ -7,6 +7,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.util.Random;
+import java.util.Scanner;
 
 public class GamePanel extends JPanel implements ActionListener {
     static final int SCREEN_WIDTH = 600;
@@ -22,6 +23,7 @@ public class GamePanel extends JPanel implements ActionListener {
     int appleY;
     char direction = 'R';
     boolean running = false;
+    int totalMoves = direction;
     Timer timer;
     Random random;
 
@@ -42,13 +44,20 @@ public class GamePanel extends JPanel implements ActionListener {
         timer.start();
     }
 
+    public void restartGame(){
+        if(running){
+            System.out.println("Game is running.");
+        } else {
+            startGame();
+        }
+    }
+
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
         draw(g);
     }
 
     public void draw(Graphics g) {
-        //draw a grid
         if (running) {
             //draw the apple
             g.setColor(Color.red);
@@ -71,6 +80,7 @@ public class GamePanel extends JPanel implements ActionListener {
             g.drawString("Score: "+applesEaten, (SCREEN_WIDTH - metrics.stringWidth("Score: "+applesEaten))/2, g.getFont().getSize());
         } else{
             gameOver(g);
+
         }
     }
 
@@ -143,6 +153,7 @@ public class GamePanel extends JPanel implements ActionListener {
         g.setFont(new Font("Ink Free", Font.BOLD, 75));
         FontMetrics metrics = getFontMetrics(g.getFont());
         g.drawString("Game Over", (SCREEN_WIDTH - metrics.stringWidth("Game Over"))/2, SCREEN_HEIGHT/2);
+        System.out.println("Your score is "+applesEaten + "!" + "\nYou made a total of " + totalMoves + " moves!");
     }
 
     @Override
