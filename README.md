@@ -1,3 +1,4 @@
 # SnakeGame
+# Project Description:
 
-This project is a simple Snake game made by using Java.
+
